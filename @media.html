@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+	*{
+		margin:0;
+		padding: 0;
+		box-sizing:border-box;
+	}
+	[class*="col"]{
+		padding:20px 0 20px 20px;
+		float: left;
+	}
+	[class*="col"] div{
+		background-color:#eee;
+		border:1px solid #999;
+		height: 50px;
+	}
+	.col-xs-1{
+		width:8.33%;
+	}
+	.col-xs-2{
+        width:16.6667%;
+	}
+	.col-xs-3{
+		width:25%;
+	}
+	.col-xs-4{
+		width:33.333%;
+	}
+    .col-xs-6{
+       width:50%;
+    }
+	@media (max-width: 780px) {
+	    .col-sm-2{
+          width:16.6667%;
+	    }
+	    .col-sm-3{
+          width:25%;
+	    }
+         .col-sm-6{
+	        width:50%;
+	    }
+	    .col-sm-8{
+	    	width:66%
+	    }
+	    .col-sm-12{
+		width:100%;
+	    }
+    }
+    .row:after, [class*=row]:after{
+    	display:table;
+    	clear:both;
+    	content:'';
+    }
+	</style>
+</head>
+<body>
+    <div class="row">
+		<div class="col-xs-4 col-sm-6 ">
+		    <div></div>
+		</div>
+		<div class="col-xs-4 col-sm-6">
+		    <div></div>
+		</div>
+		<div class="col-xs-4 col-sm-12">
+		     <div></div>
+		</div>
+	</div>
+	 <div class="row">
+		<div class="col-xs-3 col-sm-3">
+		    <div></div>
+		</div>
+		<div class="col-xs-6 col-sm-6">
+		    <div></div>
+		</div>
+		<div class="col-xs-3 col-sm-3">
+		     <div></div>
+		</div>
+	</div>
+	 <div class="row">
+		<div class="col-xs-1 col-sm-2">
+		    <div></div>
+		</div>
+		<div class="col-xs-1 col-sm-2">
+		    <div></div>
+		</div>
+		<div class="col-xs-2 col-sm-8">
+		     <div></div>
+		</div>
+		<div class="col-xs-2 col-sm-3">
+		     <div></div>
+		</div>
+		<div class="col-xs-6 col-sm-3">
+		     <div></div>
+		</div>
+	</div>
+</body>
+</html>
