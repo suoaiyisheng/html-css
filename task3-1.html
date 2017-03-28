@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>单个表单项的检验</title>
+	<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	.otest{
+		display: table;
+		margin-top: 73px;
+		font-size: 26px;
+	}
+	.ipt-wrapper{
+		display:table-cell;
+		vertical-align: middle;
+	}
+	.ipt-wrapper input{
+		width: 536px;
+		height: 62px;
+		margin-right:23px;
+		margin-left:56px;
+		border: 2px solid black;
+		outline:0px;
+	}
+	.ipt-wrapper p{
+		margin-left:56px;
+
+		font-size: 24px;
+		color:#dd0011;
+	}
+	._test1{
+		width: 107px;
+		height: 67px;
+		background-color: #2f79ba;
+		color: white;
+		border: none;
+		border-radius: 11px;
+		font-size: 26px;
+		outline:0px;
+	}
+	</style>
+</head>
+<body>
+	<div class="otest">
+		<label>名称</label>
+		<div class="ipt-wrapper">
+			<input type="text"  id="test1">
+			<p></p>
+		</div>
+		<input type="button"  id="_test1" value="验证" class="_test1">
+	</div>
+</body>
+<script type="text/javascript">
+var _test1=document.getElementById('_test1');
+var test1=document.getElementById('test1');
+_test1.onclick=function () {
+	var oTest=/[\u4E00-\u9FA5]{2}\w+/
+	var p1=document.getElementsByTagName('p')[0];
+	var arrTextChars=test1.value.split("");
+		if(arrTextChars.length==0){
+			p1.innerText="姓名不能为空";
+			p1.style.color="#dd0011";
+			test1.style.borderColor="#dd0011";
+		}
+		if (arrTextChars.length>0) {
+			if(arrTextChars.length<4||arrTextChars.length>16){
+				p1.innerText="必填，长度为4~16字符";
+				p1.style.color="#b6b6b6";
+				test1.style.borderColor="#b6b6b6";
+			}
+			else{
+				if(oTest.test(test1.value)){
+				p1.innerText="名称格式正确";
+				p1.style.color="#60bb44";
+				test1.style.borderColor="#60bb44";
+			}
+			    else{
+			     p1.innerText="格式错误辣鸡";
+			     p1.style.color="red";
+			     test1.style.borderColor="red";
+			 }
+			}
+		}
+}
+</script>
+</html>
