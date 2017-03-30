@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>try</title>
+	<style type="text/css">
+    #work{
+    	display:none;
+    }
+    #university{
+    	display:none;
+    }
+	</style>
+</head>
+<body>
+	<form id="main-Form">
+		<input type="radio" name="school" value="yes" id='yes'>
+		<label for="yes">在校生</label>
+		<input type="radio" name="school" value="no" id="no">
+		<label for="no">非在校生</label>
+	</form>
+	<form id="university">
+	    <select name="city" id="city">
+	      <option value="北京">北京</option>
+	      <option value="南京">南京</option>
+	    </select>
+	    <select name="College" id="College">
+	    </select>
+	</form>
+	<form id="work">
+	    <label for="work">就业单位</label>
+	    <input type="text" name="work">
+	</form>
+</body>
+<script type="text/javascript">
+var collegelist=[
+      ['北京大学','清华大学'],
+      ['南京信息工程大学','南京大学']
+]
+var myForm=document.querySelector('#main-Form');
+var university=document.querySelector('#university');
+var host=document.querySelector('#city');
+var guest=document.querySelector('#College');
+var work=document.querySelector('#work');
+function addOption(num){
+    for (var i = 0; i < collegelist[num].length; i++) {
+    	var newOption=new Option(collegelist[num][i],collegelist[num][i]);
+    	guest.add(newOption,undefined);
+    }
+}
+function removeOption(){
+	for (var i = 0, len = guest.options.length; i < len; i++) {
+	guest.removeChild(guest.options[0]);
+	};
+}
+function change(){
+	removeOption();
+	addOption(host.selectedIndex);
+}
+function main(){
+	if (myForm.elements[0].checked==true) {
+	university.style.display='block';
+	work.style.display='none';
+	addOption(host.selectedIndex);
+	host.onchange=change;
+	}else{
+	university.style.display='none';
+	work.style.display='block';
+	}
+}
+myForm.onchange=main;
+</script>
+</html>
