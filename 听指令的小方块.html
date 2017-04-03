@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task06</title>
+	<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+		box-sizing: border-box;
+	}
+	.container{
+    width:506px;
+    border:3px solid black;
+    position:relative;
+	}
+    .box{
+    	display:flex;
+    	border-bottom:1px solid pink;
+    }
+    .small_box{
+    	height:50px;
+       flex:1 1 auto;
+       border-right:1px solid pink;
+    }
+    .moveblock{
+    	height:50px;
+    	width:50px;
+    	position:absolute;
+    	top:102px;
+    	left:0;
+    }
+    .moveblock div:first-child{
+    	background-color:blue;
+    	height:20%
+    }
+    .moveblock div:last-child{
+    	background-color:red;
+    	height:80%;
+    	width:100%;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="moveblock">
+	              <div></div>
+	              <div></div>
+	    </div>
+	 </div>
+	 <button>GO</button>
+	 <button>TUN LEF</button>
+	 <button>TUN RIG</button>
+	 <button>TUN BAC</button>
+</body>
+<script type="text/javascript">
+var block=document.querySelector('.moveblock');
+block.style.position="absolute";
+block.style.top="0px";
+block.style.left="0px";
+//通过style对象只能读取写在内联样式中的属性；
+//不能读取外联的或者写在<style>标签中的属性
+var i=0;
+var moveblock={
+	num:0,//对象属性与属性之间用逗号隔开
+	diretion:'上',
+	change:function(){
+		switch(this.num%4){
+			case 0:this.diretion='top';break;
+			case 1:this.diretion='right';break;
+			case 2:this.diretion='bottom';break;
+			case 3:this.diretion='left';break;
+		}
+	}
+};//js中的创建对象会创建出一个实例而不是图纸
+function move(){
+	var xpos=parseInt(block.style.left);
+	var ypos=parseInt(block.style.top)
+	switch(moveblock.diretion){
+		case 'top':
+		if (ypos!=0)
+		ypos-=51;
+	     break;
+		case 'bottom':
+		if(ypos!=459)
+		ypos+=51;break;
+		case 'left':
+		if (xpos!=0)
+		xpos-=50;break;
+		case 'right':
+		if (xpos!=450)
+		xpos+=50;break;
+	}//switch语句要记得写break
+	block.style.left=xpos+'px';
+	block.style.top=ypos+'px';
+
+}
+function turrig(){
+    i+=90;
+	block.style.transform="rotate("+i+"deg)";
+	moveblock.num+=1;
+	moveblock.change();
+}
+function turleft(){
+	i+=270;
+	block.style.transform="rotate("+i+"deg)";
+	moveblock.num+=3;
+	moveblock.change();
+}
+function turBAC(){
+	i+=180;
+    block.style.transform="rotate("+i+"deg)";
+	moveblock.num+=2;
+	moveblock.change();
+}
+function init(){
+	var btn=document.getElementsByTagName('button');
+	btn[0].onclick=move;
+	btn[1].onclick=turleft;
+	btn[2].onclick=turrig;
+	btn[3].onclick=turBAC;
+}
+init();
+</script>
+</html>

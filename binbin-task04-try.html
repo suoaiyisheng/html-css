@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Task04-try</title>
+	<style type="text/css">
+    *{
+    	margin: 0;
+    	padding: 0;
+    }
+    .container{
+    	width:100px;
+    	height:100px;
+    	position:relative;
+    	transform: rotate(360deg);
+    }
+    .blue{
+    	background-color:blue;
+    	position: absolute;
+    	top:0;
+    	bottom:80px;
+    	right:0;
+    	left:0;
+    }
+    .red{
+    	background-color:red;
+    	height:100px;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <div class="blue"></div>
+	    <div class="red"></div>
+	</div>
+</body>
+<script type="text/javascript">
+//通过style只能获取到内联样式的值；不能获取从外部设置的样式的值
+var container=document.querySelector('.container');
+container.style.transform="rotate(90deg)";
+
+</script>
+</html>
