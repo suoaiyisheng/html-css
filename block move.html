@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task06</title>
+	<style type="text/css">
+	*{
+		margin:0px;
+		padding:0px;
+		box-sizing: border-box;
+	}
+	.container{
+    width:506px;
+    border:3px solid black;
+    position:relative;
+	}
+    .box{
+    	display:flex;
+    	border-bottom:1px solid pink;
+    }
+    .small_box{
+       height:50px;
+       flex:1 1 auto;
+       border-right:1px solid pink;
+       
+    }
+    .moveblock{
+    	height:50px;
+    	width:50px;
+    	position:absolute;
+    	top:102px;
+    	left:0;
+    	transition: all 1s;
+    }
+    .moveblock div:first-child{
+    	background-color:blue;
+    	height:20%
+    }
+    .moveblock div:last-child{
+    	background-color:red;
+    	height:80%;
+    	width:100%;
+    }
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="box">
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	        <div class="small_box"></div>
+	    </div>
+	    <div class="moveblock">
+	              <div></div>
+	              <div></div>
+	    </div>
+	 </div>
+	 <button>TRA LEF</button>
+	 <button>TRA TOP</button>
+	 <button>TRA RIG</button>
+	 <button>TRA BOT</button>
+	 <button>MOV LEF</button>
+	 <button>MOV TOP</button>
+	 <button>MOV RIG</button>
+	 <button>MOV BOT</button>
+	 <script type="text/javascript">
+var block=document.querySelector('.moveblock');
+block.style.position="absolute";
+block.style.top="0px";
+block.style.left="0px";
+var i=0;
+var moveblock=new Object();
+moveblock.diretion='上';
+function move(){
+	var xpos=parseInt(block.style.left);
+	var ypos=parseInt(block.style.top)
+	switch(moveblock.diretion){
+		case 'top':
+		if (ypos!=0)
+		ypos-=51;
+	     break;
+		case 'bottom':
+		if(ypos!=459)
+		ypos+=51;break;
+		case 'left':
+		if (xpos!=0)
+		xpos-=50;break;
+		case 'right':
+		if (xpos!=450)
+		xpos+=50;break;
+	}//switch语句要记得写break
+	block.style.left=xpos+'px';
+	block.style.top=ypos+'px';
+}
+function traLef(){
+	moveblock.diretion='left';
+	move();
+}
+function traTop(){
+	moveblock.diretion='top';
+	move();
+}
+function traRig(){
+	moveblock.diretion='right';
+	move();
+}
+function traBot(){
+	moveblock.diretion='bottom';
+	move();
+}
+ function angle(Dir){
+	var ang=i%360;
+	if (Dir=='top') {
+		switch(ang){
+			case 0:i+=0;break;
+			case 90:i+=270;break;
+			case 180:i+=180;break;
+			case 270:i+=90;break;
+		}
+	}
+	if (Dir=='right') {
+		switch(ang){
+			case 0:i+=90;break;
+			case 90:i+=0;break;
+			case 180:i+=270;break;
+			case 270:i+=180;break;
+		}
+	}
+	if (Dir=='bottom') {
+		switch(ang){
+			case 0:i+=180;break;
+			case 90:i+=90;break;
+			case 180:i+=0;break;
+			case 270:i+=270;break;
+		}
+	}
+	if (Dir=='left') {
+		switch(ang){
+			case 0:i+=270;break;
+			case 90:i+=180;break;
+			case 180:i+=90;break;
+			case 270:i+=0;break;
+		}
+	}
+	block.style.transform="rotate("+i+"deg)";
+ }
+
+function moveLef() {
+      angle('left');
+      traLef();
+}
+function moveTop() {
+      angle('top');
+      traTop();
+}
+function moveRig() {
+      angle('right');
+      traRig();
+}
+function moveBot() {
+      angle('bottom');
+      traBot();
+}
+
+function init() {
+	var btn=document.getElementsByTagName('button');
+	btn[0].onclick=traLef;
+	btn[1].onclick=traTop;
+	btn[2].onclick=traRig;
+	btn[3].onclick=traBot;
+	btn[4].onclick=moveLef;
+	btn[5].onclick=moveTop;
+	btn[6].onclick=moveRig;
+	btn[7].onclick=moveBot;
+}
+
+init();
+</script>
+</body>
+</html>
