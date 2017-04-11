@@ -1,0 +1,20 @@
+ 
+<!doctype html>
+<title>dom contains 方法 by 司徒正美</title>
+<meta charset="utf-8"/>
+<meta name="keywords" content="dom contains 方法 by 司徒正美" />
+<meta name="description" content="dom contains 方法 by 司徒正美" />
+
+<script type="text/javascript">
+  window.onload = function(){
+    var A = document.getElementById('parent'),
+    B =A.textNode;
+    alert(A.contains(B));
+    alert(B.contains(A));
+  }
+</script>
+<h2 style="text-align:center">contains方法</h2>
+
+<div id="parent">
+本例子会在火狐中会报错。
+</div>

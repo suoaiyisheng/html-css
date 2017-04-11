@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>table-try</title>
+</head>
+<body>
+	<table border="1" id="myTable">
+	 <thead>
+	 <tr> 
+	    <td>姓名</td>
+	    <td>语文<button>up</button><button>down</button></td>
+	    <td>数学<button>up</button><button>down</button></td>
+	    <td>英语<button>up</button><button>down</button></td>
+	    <td>总分</td>
+	 </tr>
+	 </thead>
+	 <tbody>
+	  <tr> 
+	    <td>小明</td>
+	    <td>90</td>
+	    <td>70</td>
+	    <td>60</td>
+	    <td></td>
+	 </tr>
+	 <tr> 
+	    <td>二傻子</td>
+	    <td>10</td>
+	    <td>30</td>
+	    <td>90</td>
+	    <td></td>
+	 </tr>
+	  <tr> 
+	    <td>狗蛋</td>
+	    <td>60</td>
+	    <td>80</td>
+	    <td>50</td>
+	    <td></td>
+	 </tr>
+	 </tbody>
+	</table>
+	<button id="save">save</button>
+</body>
+<script type="text/javascript">
+var myTable=document.getElementById('myTable');
+var save=document.getElementById('save');
+var up=document.getElementsByTagName('button')[0];
+var down=document.getElementsByTagName('button')[1];
+//计算总分
+function add(j) {
+	var addNum=0;
+	for (var i = 1; i<4; i++){
+		addNum+=parseInt(myTable.rows[j].cells[i].innerText);
+		myTable.rows[j].cells[4].innerText=addNum;
+	}
+}
+save.onclick=function() {
+	for (var i = 1; i < myTable.rows.length; i++)
+		add(i);
+}
+//把数字录入到要排序的数组
+var sortNum=[
+   [1,],
+   [2,],
+   [3,]
+];
+var sameNum=[
+   [1,],
+   [2,],
+   [3,]
+];
+//i为行，j为列
+function inputNum(j) {
+		for (var i =0; i <3; i++)
+		{
+			sortNum[i][1]=parseInt(myTable.rows[i+1].cells[j].innerText);
+			sameNum[i][1]=parseInt(myTable.rows[i+1].cells[j].innerText);
+		}
+}
+function sortNumber_up(x,y){
+   return x[1]-y[1];
+}
+function sortNumber_down(x,y){
+   return y[1]-x[1];
+}
+function clear(){
+for (var i=0; i <=myTable.rows.length; i++)
+	myTable.deleteRow(1);
+}
+var node=new Array();
+function sort(){
+	var a;
+	for (var i = 0; i < sortNum.length; i++) {
+       a=sortNum[i][0];
+       node.push(myTable.rows[a]);
+	}
+	clear();
+	for (var i = 0; i < node.length; i++)
+	myTable.appendChild(node[i]);
+}
+
+function sort_up(j){
+	inputNum(j);
+	sameNum.sort(sortNumber_up);
+	var count=0;
+	for (var i = 0; i < sameNum.length; i++) {
+		if(sameNum[i][1]==sortNum[i][1])
+		count++;
+	}
+	if (count!=sameNum.length){
+		    sortNum.sort(sortNumber_up);
+			sort();
+	}
+}
+function sort_down(j){
+	inputNum(j);
+	sameNum.sort(sortNumber_down);
+	var count;
+	for (var i = 0,count=0; i < sameNum.length; i++) {
+		if(sameNum[i][1]==sortNum[i][1])
+		count++;
+	}
+	if (count!=sameNum.length){
+		    sortNum.sort(sortNumber_down);
+			sort();
+	}
+}
+up.onclick=function() {
+	sort_up(1);
+}
+down.onclick=function () {
+	sort_down(1);
+}
+</script>
+</html>
